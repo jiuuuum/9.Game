@@ -4,7 +4,7 @@ argument-hint: [카테고리]
 allowed-tools: Read, Grep
 ---
 
-이 프로젝트의 퀴즈 문제 데이터(`js/questions.js`) 전체를 대상으로 통계를 집계한다.
+이 프로젝트의 퀴즈 문제 데이터(`dddd/js/questions.js`) 전체를 대상으로 통계를 집계한다.
 
 대상 카테고리: $ARGUMENTS
 

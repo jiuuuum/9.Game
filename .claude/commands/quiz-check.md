@@ -4,7 +4,7 @@ argument-hint: [카테고리]
 allowed-tools: Read, Grep, WebSearch
 ---
 
-이 프로젝트의 퀴즈 문제 데이터(`js/questions.js`)에서 각 문제에 표시된 정답이 실제 사실과 맞는지 검증한다.
+이 프로젝트의 퀴즈 문제 데이터(`dddd/js/questions.js`)에서 각 문제에 표시된 정답이 실제 사실과 맞는지 검증한다.
 
 대상 카테고리: $ARGUMENTS
 
