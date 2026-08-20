@@ -1,7 +1,7 @@
 ---
 description: 학생 성적을 상위 비율(백분위) 기준 상대평가로 A/B/C/D 등급을 매긴 보고서 생성 (선생님 모드)
 argument-hint: [csv 경로] [기준: best|latest|avg]
-allowed-tools: Read
+allowed-tools: Read, Write
 ---
 
 `results/students.csv`(또는 지정 경로)의 학생 성적 데이터를 이용해, 절대점수가 아닌 **학급 내 상위 비율(백분위) 기준 상대평가**로 등급을 매긴 보고서를 만든다. 데이터 형식·검증 규칙은 `/quiz-teacher-collect`와 동일하다.
@@ -27,4 +27,6 @@ allowed-tools: Read
 6. 전체 학생 수가 5명 미만이면, 상대평가 특성상 등급 경계가 불안정할 수 있다는 점을 보고서 상단에 경고 문구로 안내한다 (등급 자체는 그대로 계산해서 보여준다).
 7. 보고서 표를 정답률 내림차순으로 보여준다: 순위, 이름, 카테고리, 난이도, 점수, 정답률(%), 백분위(%), 등급.
 8. 등급별 분포 요약을 함께 보여준다: 등급(A/B/C/D)별 인원 수와 전체 대비 비율.
-9. 파일을 수정하지 않는다.
+9. 7~8번 내용을 그대로 담은 단순한 HTML 문서(외부 리소스 없이 인라인 CSS만 사용)를 만들어 `results/teacher_report.html`로 저장한다. 제목, 생성 기준(csv 경로·대표 기록 기준), 보고서 표, 등급별 분포 요약, 5번 경고 문구(해당 시)를 포함한다. 이미 파일이 있으면 덮어쓴다.
+10. 원본 `results/students.csv`는 수정하지 않는다 — 이 명령이 쓰는 파일은 새로 생성/갱신하는 `results/teacher_report.html` 뿐이다.
+11. 저장된 `results/teacher_report.html` 경로를 안내하고, 필요하면 `/export-report`로 CSV·PDF로 내보낼 수 있다고 안내한다.
